@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        template="/templates/kompDefault.xhtml">
+        
+        <ui:define name="content">
+        
+    <h:form>
+    
+     <h:dataTable value="#{kompBean.jednorozce}" var="item" border="2">
+      <f:facet name="header">#{msg.kompAllLabel}</f:facet>
+      
+      <h:column>
+              <f:facet name="header">#{msg.kompFirmaLabel}</f:facet>
+              #{item.firma}
+      </h:column>
+      
+      <h:column>
+              <f:facet name="header">#{msg.kompModelLabel}</f:facet>
+              #{item.model}
+      </h:column>
+      
+      <h:column>
+              <f:facet name="header">#{msg.kompProcesorLabel}</f:facet>
+              #{item.procesor}
+      </h:column>
+      
+      <h:column>
+              <f:facet name="header">#{msg.kompSzybkoscLabel}</f:facet>
+              #{item.szybkosc}
+      </h:column>
+
+      <h:column>
+              <f:facet name="header">#{msg.kompMaKamereLabel}</f:facet>
+              #{item.maKamere}
+      </h:column>
+      
+      <h:column>
+      			<f:facet name="header">#msg.kompIloscWejscUsb}</f:facet>
+      			#{item.iloscWejscUsb}
+      </h:column>
+      
+      <h:column>
+      			<f:facet name="header">#msg.kompTypLabel}</f:facet>
+      			#{item.typ}
+      </h:column>
+      
+      <h:column>
+              <f:facet name="header">#{msg.kompDataWydaniaLabel}</f:facet>
+              #{item.dataWydania}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.delete}</f:facet>
+        <h:commandLink value="usun" action="#{kompBean.deleteKomp}"/>
+      </h:column> 
+      
+     </h:dataTable>
+    </h:form>
+      
+        </ui:define>
+        
+</ui:composition>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        template="/templates/kompDefault.xhtml">
+        <ui:define name="content">
+                                        <h:outputText value="#{msg.kompAddLabel}" />
+                <h:form id="komp_form">
+                        <h:panelGrid columns="2">
+                                <h:outputText value="#{msg.kompFirmaLabel}" />
+                                <h:inputText id="firma" value="#{kompBean.komp.firma}" />
+                                <h:outputText value="#{msg.kompModelLabel}"/>
+                                <h:inputText id="model" value="#{kompBean.komp.model}" validator="#{kompBean.uniqueModel}" required="#{true}">
+                                  <f:validator validatorId="modelValidator"/>
+                                  <f:ajax event="keyup" render="messages Test"/>
+                                </h:inputText>
+                                <h:outputText value="#{msg.kompProcesorLabel}"/>
+                                <h:inputText id="procesor" value="#{kompBean.komp.procesor}" />                   
+                                <h:outputText value="#{msg.kompSzybkoscLabel}"/>
+                                <h:inputText id="szybkosc" value="#{kompBean.komp.szybkosc}"/>                 
+                                <h:outputText value="#{msg.kompMaKamereLabel}"/>
+                                <h:selectBooleanCheckbox id="maKamere" value="#{kompBean.komp.maKamere}" />
+                                <h:outputText value="#{msg.kompTypLabel}"/>
+                                <h:inputText id="typ" value="#{kompBean.komp.typ}"/>
+                                <h:outputText value="#{kompIloscWejscUsb}"/>
+                                <h:inputText id="iloscWejscUsb" value="#{kompBean.komp.iloscWejscUsb}"/>
+                                <h:outputText value="#{kompDataWydaniaLabel"/>
+                                <h:inputText id="dataWydania" value="#{kompBean.komp.dataWydania}" />                     			 
+                        </h:panelGrid>
+                        
+<h:commandButton value="#{msg.kompFormOKButton}" action="#{kompBean.addkomp}">
+
+</h:commandButton>
+ 
+                        <h:panelGrid id="Test">
+                                <h:messages id="messages" showDetail="#{true}" showSummary="#{false}" />
+                        </h:panelGrid>
+                        
+                </h:form>
+        </ui:define>
+</ui:composition>
