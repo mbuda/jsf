@@ -8,35 +8,46 @@
         <ui:define name="content">
                                         <h:outputText value="#{msg.kompAddLabel}" />
                 <h:form id="komp_form">
-                        <h:panelGrid columns="2">
+                        <h:panelGrid columns="3" id="form">
                                 <h:outputText value="#{msg.kompFirmaLabel}" />
                                 <h:inputText id="firma" value="#{kompBean.komp.firma}" />
+                                <h:message for="firma"/>
+                                
                                 <h:outputText value="#{msg.kompModelLabel}"/>
                                 <h:inputText id="model" value="#{kompBean.komp.model}" validator="#{kompBean.uniqueModel}" required="#{true}">
                                   <f:validator validatorId="modelValidator"/>
-                                  <f:ajax event="keyup" render="messages Test"/>
+                                  <f:ajax event="keyup" render="form"/>
                                 </h:inputText>
+                                <h:message for="model"/>
+                               
                                 <h:outputText value="#{msg.kompProcesorLabel}"/>
                                 <h:inputText id="procesor" value="#{kompBean.komp.procesor}" />                   
+                                <h:message for="procesor"/>
+                                
                                 <h:outputText value="#{msg.kompSzybkoscLabel}"/>
                                 <h:inputText id="szybkosc" value="#{kompBean.komp.szybkosc}"/>                 
+                                <h:message for="szybkosc"/>
+                                
                                 <h:outputText value="#{msg.kompMaKamereLabel}"/>
                                 <h:selectBooleanCheckbox id="maKamere" value="#{kompBean.komp.maKamere}" />
+                                <h:message for="maKamere"/>
+                                
                                 <h:outputText value="#{msg.kompTypLabel}"/>
                                 <h:inputText id="typ" value="#{kompBean.komp.typ}"/>
+                                <h:message for="typ"/>
+                                
                                 <h:outputText value="#{kompIloscWejscUsb}"/>
                                 <h:inputText id="iloscWejscUsb" value="#{kompBean.komp.iloscWejscUsb}"/>
+                                <h:message for="iloscWejscUsb"/>
+                                
                                 <h:outputText value="#{kompDataWydaniaLabel"/>
-                                <h:inputText id="dataWydania" value="#{kompBean.komp.dataWydania}" />                     			 
+                                <p:calendar id="dataWydania" value="#{kompBean.komp.dataWydania}" />  
+                                <h:message for="dataWydania"/>                   			 
                         </h:panelGrid>
                         
-<h:commandButton value="#{msg.kompFormOKButton}" action="#{kompBean.addkomp}">
+<h:commandButton value="#{msg.kompFormOKButton}" action="#{kompBean.addKomp}">
 
 </h:commandButton>
- 
-                        <h:panelGrid id="Test">
-                                <h:messages id="messages" showDetail="#{true}" showSummary="#{false}" />
-                        </h:panelGrid>
                         
                 </h:form>
         </ui:define>

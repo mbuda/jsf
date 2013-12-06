@@ -1,11 +1,15 @@
 package com.example.jsfdemo.domain;
 
+import java.util.Date;
+
 import javax.validation.constraints.*;
 
 public class Komputer {
 	
 	private int id_komp;
+	@Size(min=3, max=20)
 	private String firma;
+	@Size(min=5)
 	private String model;
 	private String procesor;
 	private double szybkosc;
@@ -14,7 +18,7 @@ public class Komputer {
 	private int iloscWejscUsb;
 	@Max(2013)
 	@NotNull
-	private int dataWydania;
+	private Date dataWydania;
 	
 	
 	public Komputer(){
@@ -71,14 +75,13 @@ public class Komputer {
 	public void setIloscWejscUsb(int iloscWejscUsb) {
 		this.iloscWejscUsb = iloscWejscUsb;
 	}
-	public int getDataWydania() {
+
+	public Date getDataWydania() {
 		return dataWydania;
 	}
-	public void setDataWydania(int dataWydania) {
+
+	public void setDataWydania(Date dataWydania) {
 		this.dataWydania = dataWydania;
 	}
-
-	
-	
 	
 }
