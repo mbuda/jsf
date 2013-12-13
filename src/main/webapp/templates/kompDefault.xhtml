@@ -13,18 +13,18 @@
         
         <div class="heading">
           <ui:insert name="heading">
-     <h:graphicImage name="images/#{msg.logo}.png"/>
+     <h:graphicImage name="images/logo.png"/>
      </ui:insert>
     </div>
-        <div class="menuAndContent">
-         <div class="menu">
-           <ui:insert name="menu">
-         <ui:include src="/views/main/kompMenu.xhtml" />
-       </ui:insert>
-      </div>
-          <div class="content">
-             <ui:insert name="content" />
-       </div>
+          <div class="menuAndContent">
+          	<div class="menu">
+             <ui:insert name="menu">
+             	<ui:include src="/views/main/kompMenu.xhtml" />
+             </ui:insert>
+            </div>
+        <div class="content">
+        	<ui:insert name="content" />
+        	</div>
         </div>
 </h:body>
 </html>

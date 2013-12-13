@@ -7,16 +7,16 @@ import javax.validation.constraints.*;
 public class Komputer {
 	
 	private int id_komp;
-	@Size(min=3, max=20)
 	private String firma;
-	@Size(min=5)
+	@Size(min=5, max=15)
 	private String model;
+	@NotNull
 	private String procesor;
 	private double szybkosc;
 	private boolean maKamere;
 	private String typ;
 	private int iloscWejscUsb;
-	@Max(2013)
+	@Past
 	@NotNull
 	private Date dataWydania;
 	
@@ -38,7 +38,6 @@ public class Komputer {
 		this.firma = firma;
 	}
 	
-	//@Size(min = 2, max= 25)
 	public String getModel() {
 		return model;
 	}

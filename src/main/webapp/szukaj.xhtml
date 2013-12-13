@@ -3,6 +3,7 @@
         xmlns:ui="http://java.sun.com/jsf/facelets"
         xmlns:f="http://java.sun.com/jsf/core"
         xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
         template="/templates/kompDefault.xhtml">
         
         <ui:define name="content">
@@ -10,54 +11,54 @@
     <h:form>
     
     
-     <h:dataTable value="#{kompBean.getKompByModel}" var="item" border="2">
+     <p:dataTable value="#{kompBean.getKompByModel}" var="item" border="2">
       <f:facet name="header">#{msg.kompAllLabel}</f:facet>
       
-      <h:column>
+      <p:column>
               <f:facet name="header">#{msg.kompFirmaLabel}</f:facet>        
               #{item.firma}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
               <f:facet name="header">#{msg.kompModelLabel}</f:facet>
               #{item.model}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
               <f:facet name="header">#{msg.kompProcesorLabel}</f:facet>
               #{item.procesor}
-      </h:column>
+      </p:column>
 
-      <h:column>
+      <p:column>
               <f:facet name="header">#{msg.kompSzybkoscLabel}</f:facet>
               #{item.szybkosc}
-      </h:column>s
+      </p:column>s
 
-      <h:column>
+      <p:column>
               <f:facet name="header">#{msg.kompMaKamereLabel}</f:facet>
               #{item.maKamere}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
               <f:facet name="header">#{msg.kompTypLabel}</f:facet>
               #{item.typ}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
       			<f:facet name="header">#{msg.kompIloscWejscUsbLabel}</f:facet>
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
       			<f:facet name="header">#{msg.kompDataWydaniaLabel}</f:facet>
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
         <f:facet name="header">#{msg.delete}</f:facet>
         <h:commandLink value="usun" action="#{kompBean.deleteKomp}"/>
-      </h:column> 
+      </p:column> 
       
       
-     </h:dataTable>
+     </p:dataTable>
     </h:form>
       
         </ui:define>

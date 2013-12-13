@@ -14,6 +14,7 @@ public class KomputerManager {
 	
 	private List<Komputer> db = new ArrayList<Komputer>();
 	private static int id_komp = 0 ;
+	
 	public void addKomputer(Komputer komp) {
 		Komputer newKomp = new Komputer();
 

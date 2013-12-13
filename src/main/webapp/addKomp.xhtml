@@ -6,42 +6,55 @@
         xmlns:p="http://primefaces.org/ui"
         template="/templates/kompDefault.xhtml">
         <ui:define name="content">
-                                        <h:outputText value="#{msg.kompAddLabel}" />
+            <h:outputText value="#{msg.kompAddLabel}" />
                 <h:form id="komp_form">
                         <h:panelGrid columns="3" id="form">
                                 <h:outputText value="#{msg.kompFirmaLabel}" />
-                                <h:inputText id="firma" value="#{kompBean.komp.firma}" />
+                                <h:selectOneListbox id="firma" value="#{kompBean.komputer.firma}" >
+                                <f:selectItem id="it1" itemLabel="Toshiba" itemValue="Toshiba" />
+                                <f:selectItem id="it2" itemLabel="Sony" itemValue="Sony" />
+                                <f:selectItem id="it3" itemLabel="HP" itemValue="HP" />
+                                <f:selectItem id="it4" itemLabel="Samsung" itemValue="Samsung" />
+                                <f:selectItem id="it5" itemLabel="Apple" itemValue="Apple" />
+                                </h:selectOneListbox>
                                 <h:message for="firma"/>
                                 
                                 <h:outputText value="#{msg.kompModelLabel}"/>
-                                <h:inputText id="model" value="#{kompBean.komp.model}" validator="#{kompBean.uniqueModel}" required="#{true}">
+                                <h:inputText id="model" value="#{kompBean.komputer.model}" validator="#{kompBean.uniqueModel}" required="#{true}">
                                   <f:validator validatorId="modelValidator"/>
                                   <f:ajax event="keyup" render="form"/>
                                 </h:inputText>
                                 <h:message for="model"/>
                                
                                 <h:outputText value="#{msg.kompProcesorLabel}"/>
-                                <h:inputText id="procesor" value="#{kompBean.komp.procesor}" />                   
+                                <h:inputText id="procesor" value="#{kompBean.komputer.procesor}" />                   
                                 <h:message for="procesor"/>
                                 
                                 <h:outputText value="#{msg.kompSzybkoscLabel}"/>
-                                <h:inputText id="szybkosc" value="#{kompBean.komp.szybkosc}"/>                 
+                                <h:inputText id="szybkosc" value="#{kompBean.komputer.szybkosc}"/>                 
                                 <h:message for="szybkosc"/>
                                 
                                 <h:outputText value="#{msg.kompMaKamereLabel}"/>
-                                <h:selectBooleanCheckbox id="maKamere" value="#{kompBean.komp.maKamere}" />
+                                <h:selectBooleanCheckbox id="maKamere" value="#{kompBean.komputer.maKamere}" />
                                 <h:message for="maKamere"/>
                                 
                                 <h:outputText value="#{msg.kompTypLabel}"/>
-                                <h:inputText id="typ" value="#{kompBean.komp.typ}"/>
+                                <h:selectOneMenu id="typ" value="#{kompBean.komputer.typ}">
+                                	<f:selectItem id="item1" itemLabel="Laptop" itemValue="Laptop" />
+                                	<f:selectItem id="item2" itemLabel="PC" itemValue="PC" />
+                                	<f:selectItem id="item3" itemLabel="Netbook" itemValue="Netbook" />
+                                	<f:selectItem id="item4" itemLabel="Tablet" itemValue="Tablet" />
+                                </h:selectOneMenu>
                                 <h:message for="typ"/>
                                 
-                                <h:outputText value="#{kompIloscWejscUsb}"/>
-                                <h:inputText id="iloscWejscUsb" value="#{kompBean.komp.iloscWejscUsb}"/>
+                                <h:outputText value="#{msg.kompIloscWejscUsbLabel}"/>
+                                <p:inputNumberSpinner segmentCount="1" id="iloscWejscUsb" value="#{kompBean.komputer.iloscWejscUsb}">                           
+                               <f:validateLongRange minimum="0" maximum="10" />
+                               </p:inputNumberSpinner>
                                 <h:message for="iloscWejscUsb"/>
                                 
-                                <h:outputText value="#{kompDataWydaniaLabel"/>
-                                <p:calendar id="dataWydania" value="#{kompBean.komp.dataWydania}" />  
+                                <h:outputText value="#{msg.kompDataWydaniaLabel}"/>
+                                <p:calendar id="dataWydania" value="#{kompBean.komputer.dataWydania}" />  
                                 <h:message for="dataWydania"/>                   			 
                         </h:panelGrid>
                         

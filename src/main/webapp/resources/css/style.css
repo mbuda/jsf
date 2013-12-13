@@ -1,18 +1,18 @@
 body {
-   margin: 10;
-   padding: 10;
+   margin: 20px;
+   padding: 20px;
    background-color:  #54a098;
-   font-family: Tahoma;
-   font-size: 0.9em;
+   font-family: Verdana;
+   font-size: 14px;
 }
 
 .header {
   padding: 10px;
-  font-size: 13px;
+  font-size: 16px;
   font-style: bold;
   font-family: Tahoma;
   text-align: center;
-  height: 150px;
+  height: 200px;
 }
 .menuAndContent {
   width: 100%;
@@ -23,13 +23,17 @@ body {
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 20px;
-  border: thin solid blue;
+  border: 2px solid #000;
   position: absolute;
   left: 10px;
   height: 80%;
   width: 200px;
   background: #FFFFFF;
   top: 200px;
+}
+
+dataTable{
+	margin-top: 40px;
 }
 
 .content {

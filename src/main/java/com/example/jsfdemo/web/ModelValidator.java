@@ -13,9 +13,14 @@ public class ModelValidator implements Validator {
 	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
 		String model = value.toString();
+		
+		FacesMessage message = new FacesMessage();
+		message.setSummary("Model musi mieć co najmniej 5 liter");
+		message.setSeverity(FacesMessage.SEVERITY_ERROR);
+		
 		if(model.length()<5){
-			FacesMessage fm = new FacesMessage("Model musi mieć co najmniej 5 znaków");
-			throw new ValidatorException(fm);
+			throw new ValidatorException(message);
 		}
-	}
+	
+}
 }
