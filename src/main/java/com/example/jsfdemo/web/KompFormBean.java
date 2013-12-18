@@ -42,10 +42,10 @@ public class KompFormBean implements Serializable {
 	// Actions
 	public String addKomp(){
 		km.addKomputer(komp);
-		return "db";
+		return "kompy";
 	}
 	
-	public String deleteKomp() {
+	public String deleteKomp(Komputer komp) {
 		Komputer kompDoUsuniecia=kompy.getRowData();
 		km.deleteKomp(kompDoUsuniecia);
 		return null;

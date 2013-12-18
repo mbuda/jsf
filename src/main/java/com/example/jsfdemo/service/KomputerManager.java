@@ -27,21 +27,20 @@ public class KomputerManager {
 		newKomp.setTyp(komp.getTyp());
 		newKomp.setIloscWejscUsb(komp.getIloscWejscUsb());
 		newKomp.setDataWydania(komp.getDataWydania());
+		db.add(newKomp);	
 		id_komp++;
-		db.add(newKomp);
 	}
 
 	// Usuwa komputer po id
-	public void deleteKomp(Komputer komp) {
-		Komputer kompUsuwany = null;
+	public void deleteKomp(Komputer kompDoUsuniecia) {
+		Komputer kompUsuwany =  null;
 		for (Komputer k : db) {
-			if (k.getId_komp()==(komp.getId_komp())) {
-				kompUsuwany = k;
+			if (k.getId_komp()==(kompUsuwany.getId_komp())) {
+		kompUsuwany = k;
+		db.remove(kompUsuwany);
 				break;
 			}
 		}
-		if (kompUsuwany != null)
-			db.remove(kompUsuwany);
 	}
 	
 	public List<Komputer> getKompByModel(Komputer komp){

@@ -48,9 +48,7 @@
                                 <h:message for="typ"/>
                                 
                                 <h:outputText value="#{msg.kompIloscWejscUsbLabel}"/>
-                                <p:inputNumberSpinner segmentCount="1" id="iloscWejscUsb" value="#{kompBean.komputer.iloscWejscUsb}">                           
-                               <f:validateLongRange minimum="0" maximum="10" />
-                               </p:inputNumberSpinner>
+                                <h:inputText id="iloscWejscUsb" value="#{kompBean.komputer.iloscWejscUsb}" />    
                                 <h:message for="iloscWejscUsb"/>
                                 
                                 <h:outputText value="#{msg.kompDataWydaniaLabel}"/>
